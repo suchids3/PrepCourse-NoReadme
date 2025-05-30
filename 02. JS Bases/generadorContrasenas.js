@@ -29,24 +29,27 @@ function generarContrasena(longitud, incluirEspeciales, incluirNumeros, incluirM
   var caracteresDisponibles = letras;
 
   if (incluirEspeciales) {
-      caracteresDisponibles += especiales;
+    caracteresDisponibles += especiales;
   }
 
   if (incluirNumeros) {
-      caracteresDisponibles += numeros;
+    caracteresDisponibles += numeros;
   }
 
   if (incluirMayusculas) {
-     caracteresDisponibles += letrasMayusculas; 
+    caracteresDisponibles += letrasMayusculas; 
 
   }
 
   var contrasena = "";
 
-  if (longitud >= 3) {
+  //for 
+  
+  for (let i = 0; i < longitud; i++) {
     var valorAleatorio = Math.random() * caracteresDisponibles.length;
-    var valorEntero = Math.floor(valorAleatorio);
-    var caracter = caracteresDisponibles.charAt(valorEntero);
+    var indice = Math.floor(valorAleatorio);
+    var caracter = caracteresDisponibles.charAt(indice);
+    contrasena += caracter;
   }
 
   return "Contraseña generada: " + contrasena;
