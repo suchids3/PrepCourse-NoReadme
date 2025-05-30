@@ -2,7 +2,6 @@
 var actividadesSospechozas = [];
 
 function agregarActividad(descripcion, nivelRiesgo){
-    /* TU CODIGO */
     if (descripcion.length == 0 || nivelRiesgo == "") 
         return "Descripcion o nivel de riesgo no valido";
     if (nivelRiesgo != "bajo" || nivelRiesgo != "medio" || nivelRiesgo != "alto") {
@@ -36,15 +35,6 @@ function filtrarActividadesPorRiesgo(nivelRiesgo){
     if (!nivelRiesgo) {
         return "Nivel de riesgo no valido, el nivel debe ser: bajo, medio o alto";
     }
-
-    var actividadesFiltradas = actividadesSospechozas.filter(function(actividad) {
-        return actividad.includes ("Riesgo - " + nivelRiesgo);
-    });
-    if (!actividadesFiltradas.length) {
-        return "No hay actividades con este nivel de riesgo"
-    }
-    return actividadesFiltradas;
-}
 
 function generarReporteDeActividades(){
     /* TU CODIGO */
